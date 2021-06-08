@@ -1,3 +1,2 @@
 INDEX VERSION 1.131+D:\03.Denise\Generation\Bloco I - Scrum, Lógica e Java\2. Java\Logica\.metadata\.plugins\org.eclipse.jdt.core
-302554799.index
 2402899525.index

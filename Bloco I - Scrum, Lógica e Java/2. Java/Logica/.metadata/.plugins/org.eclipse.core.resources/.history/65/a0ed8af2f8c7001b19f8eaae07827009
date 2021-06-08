@@ -2,7 +2,7 @@ package arrays;
 
 import java.util.Scanner;
 
-public class Exercicio3 {
+public class Exercicio3_ {
 
 	/*	3- Leia uma matriz 3 x 3, conte e escreva quantos valores maiores que 10 ela possui.
 	 */
@@ -10,38 +10,32 @@ public class Exercicio3 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int x=3, y=3;
-		int [][] matriz = new int [x][y];
+		int [][] matriz = new int [3][3];
 		int contMaior=0;
 		
 		System.out.println("\nEntre com um número: ");
-		Scanner inserir = new Scanner (System.in);
+		Scanner leia = new Scanner (System.in);
 		
-		for(int i=0;i<x;i++)
+		for(int i=0;i<3;i++)
 		{
-			for(int j=0;j<y;j++)
+			for(int j=0;j<3;j++)
 			{
 				System.out.println("\nDigite um número: ");
-				matriz [i][j] = inserir.nextInt();
-				
+				matriz [i][j] = leia.nextInt();
+			}
+		}
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
 				if (matriz [i][j]>10)
 				{
 					contMaior++;
 				}
 			}
 		}
-		System.out.println("\nOs números maiores que 10 são: ");
-		for(int i=0;i<x;i++)
-		{
-			for(int j=0;j<y;j++)
-			{
-				if (matriz [i][j]>10)
-				{
-					System.out.println(matriz [i][j]);
-				}
-			}
-		}
 		System.out.println("\nForam contados "+contMaior+" números maiores do que 10.");
+		
 		
 	}
 

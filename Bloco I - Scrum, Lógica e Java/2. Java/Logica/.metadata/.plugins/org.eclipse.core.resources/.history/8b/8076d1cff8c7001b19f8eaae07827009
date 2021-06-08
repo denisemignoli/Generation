@@ -1,0 +1,41 @@
+package arrays;
+
+import java.util.Scanner;
+
+public class Exercicio3_ {
+
+	/*	3- Leia uma matriz 3 x 3, conte e escreva quantos valores maiores que 10 ela possui.
+	 */
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int [][] matriz = new int [3][3];
+		int contMaior=0;
+		
+		System.out.println("\nEntre com um número: ");
+		Scanner leia = new Scanner (System.in);
+		
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				matriz [i][j] = leia.nextInt();
+			}
+		}
+		for(int i=0;i<3;i++)
+		{
+			for(int j=0;j<3;j++)
+			{
+				if (matriz [i][j]>10)
+				{
+					contMaior++;
+				}
+			}
+		}
+		System.out.println("\nForam contados "+contMaior+" maiores do que 10.");
+		
+		
+	}
+
+}
