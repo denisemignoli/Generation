@@ -16,6 +16,18 @@ public class Cavalo extends Animal {
 		this.adestrador = adestrador;
 	}
 	
+	@Override
+	public void emitir(String som)
+	{
+		System.out.println("\nTipo do som emitido: "+som);
+	}
+
+	@Override
+	public void correr(int corrida)
+	{
+		System.out.println("\nTipo do corrida: "+corrida);
+	}
+	
 	public int getPeso() {
 		return peso;
 	}

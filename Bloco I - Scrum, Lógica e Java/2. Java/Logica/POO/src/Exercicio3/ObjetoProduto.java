@@ -8,7 +8,7 @@ public class ObjetoProduto {
 		// TODO Auto-generated method stub
 
 		ProdutoEletronico produto1 = new ProdutoEletronico("Calculadora Científica","Fx-82MS","Casio","azul marinho",50,150);
-		System.out.println("Detlhes do produto: ");
+		System.out.println("Detalhes do produto: ");
 		produto1.printFichaTecnica();
 	}
 }

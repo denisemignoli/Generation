@@ -13,7 +13,19 @@ public class Cachorro extends Animal{
 		this.raca = raca;
 		this.brinquedo = brinquedo;
 	}
+	
+	@Override
+	public void emitir(String som)
+	{
+		System.out.println("\nTipo do som emitido: "+som);
+	}
 
+	@Override
+	public void correr(int corrida)
+	{
+		System.out.println("\nTipo de corrida do dog: "+corrida);
+	}
+	
 	public String getTamanho() {
 		return tamanho;
 	}

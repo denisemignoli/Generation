@@ -1,9 +1,12 @@
 package ExercicioHeranca;
 
-public class Animal {
+public abstract class Animal {
 
 	private String nome;
 	private int idade;
+	
+	abstract public void emitir(String som);
+	abstract public void correr(int corrida);
 	
 	public Animal(String nome, int idade)
 	{

@@ -12,6 +12,18 @@ public class Preguica extends Animal {
 		this.motivacao = motivacao;
 	}
 	
+	@Override
+	public void emitir(String som)
+	{
+		System.out.println("\nTipo do som emitido: "+som);
+	}
+
+	@Override
+	public void correr(int corrida)
+	{
+		System.out.println("\nTipo de corrida: "+corrida);
+	}
+	
 	public int getPeso() {
 		return peso;
 	}
