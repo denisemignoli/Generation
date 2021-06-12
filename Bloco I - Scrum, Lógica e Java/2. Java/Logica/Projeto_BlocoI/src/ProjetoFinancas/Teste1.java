@@ -1,4 +1,4 @@
-package Projeto_BlocoI;
+package ProjetoFinancas;
 
 import java.util.Scanner;
 

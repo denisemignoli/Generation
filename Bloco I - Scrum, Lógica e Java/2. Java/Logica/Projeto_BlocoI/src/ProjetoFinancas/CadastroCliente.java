@@ -1,16 +1,15 @@
-package Projeto_BlocoI;
+package ProjetoFinancas;
 
 import java.text.NumberFormat;
 
 public class CadastroCliente {
 
-	private String nomeCliente;
+	private String nomeCliente="Denise";
 	private double receita;
 	
-	public CadastroCliente(String nomeCliente,double receita)
+	public CadastroCliente(double receita)
 	{
 		super();
-		this.nomeCliente = nomeCliente;
 		this.receita = receita;
 	}
 
