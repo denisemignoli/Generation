@@ -1,4 +1,4 @@
-package ProjetoFinancas;
+package ProjetoI;
 
 import java.text.NumberFormat;
 
@@ -8,8 +8,8 @@ public class Cliente extends Imprimir {
 	private int idade;
 	private String profissao;
 	private double salario;
-	
-	public Cliente (String nome, int idade, String profissao, float salario) {
+		
+	public Cliente (String nome, int idade, String profissao, double salario) {
 		
 		super();
 		this.nome = nome;
@@ -18,6 +18,7 @@ public class Cliente extends Imprimir {
 		this.salario = salario;
 		
 	}
+	
 
 	public String getNome() {
 		return nome;

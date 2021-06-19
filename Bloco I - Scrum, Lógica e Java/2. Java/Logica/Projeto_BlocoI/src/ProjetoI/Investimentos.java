@@ -1,4 +1,4 @@
-package ProjetoFinancas;
+package ProjetoI;
 
 import java.text.NumberFormat;
 

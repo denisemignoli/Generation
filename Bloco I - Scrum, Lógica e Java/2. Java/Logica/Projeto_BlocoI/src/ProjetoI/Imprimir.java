@@ -1,4 +1,4 @@
-package ProjetoFinancas;
+package ProjetoI;
 
 public abstract class Imprimir {
 
@@ -7,3 +7,4 @@ public abstract class Imprimir {
 	public Imprimir () {
 	}
 }
+//ProjetoFinancas
