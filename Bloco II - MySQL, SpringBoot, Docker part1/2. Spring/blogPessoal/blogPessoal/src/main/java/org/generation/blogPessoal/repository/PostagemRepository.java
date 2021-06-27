@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
-@Repository
+@Repository // é o cara que liga o banco de dados com o controlador
 public interface PostagemRepository extends JpaRepository<Postagem, Long>{
-	public List<Postagem> findAllbyTituloContainingIgnoreCase (String Titulo);
+	public List<Postagem> findAllByTituloContainingIgnoreCase (String titulo);
 	 
 }
