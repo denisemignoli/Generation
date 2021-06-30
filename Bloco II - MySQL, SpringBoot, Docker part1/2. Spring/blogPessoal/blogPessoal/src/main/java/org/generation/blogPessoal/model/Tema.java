@@ -22,7 +22,7 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
+	@NotNull (message = "campo não pode ser nulo")
 	private String descricao;
 	
 	

@@ -23,14 +23,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Postagem {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // criar automaticamente os IDs
 	private long id;
 
-	@NotNull
+	@NotNull (message = "campo não pode ser nulo")
 	@Size(min = 5, max = 100)
 	private String titulo;
 
-	@NotNull
+	@NotNull (message = "campo não pode ser nulo")
 	@Size(min = 10, max = 500)
 	private String texto;
 
