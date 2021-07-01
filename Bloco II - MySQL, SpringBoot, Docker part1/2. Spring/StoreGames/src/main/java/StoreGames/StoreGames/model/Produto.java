@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -21,7 +23,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotEmpty(message = "Nome não pode estar vazio")
@@ -33,9 +35,15 @@ public class Produto {
 	private String preco;
 
 	@ManyToOne
-	@JsonIgnoreProperties("produtos")
+	@JsonIgnoreProperties("produto")
 	private Categoria categoria;
 
+	@ManyToMany
+	@JoinTable(name = "tb_juncao", //determina quem é o "Pai"
+	joinColumns = @JoinColumn(name = "fk_produto"),
+	inverseJoinColumns = @JoinColumn(name = "fk_categoria"))
+	private List<Categoria>listaDeCategorias;
+	
 	public Long getId() {
 		return id;
 	}
@@ -66,6 +74,14 @@ public class Produto {
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
+	}
+
+	public List<Categoria> getListaDeCategorias() {
+		return listaDeCategorias;
+	}
+
+	public void setListaDeCategorias(List<Categoria> listaDeCategorias) {
+		this.listaDeCategorias = listaDeCategorias;
 	}
 
 }

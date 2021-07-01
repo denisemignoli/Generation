@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Categoria {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotEmpty(message = "Nome não pode estar vazio")
@@ -37,8 +37,11 @@ public class Categoria {
 
 	@OneToMany(mappedBy = "categoria")
 	@JsonIgnoreProperties("categoria")
-	private List<Produto> produtos;
+	private List<Produto> produto;
 
+	@ManyToMany(mappedBy = "listaDeCategorias")
+	private List<Produto>listaDeProdutos;
+	
 	public Long getId() {
 		return id;
 	}
@@ -72,11 +75,19 @@ public class Categoria {
 	}
 
 	public List<Produto> getProduto() {
-		return produtos;
+		return produto;
 	}
 
 	public void setProduto(List<Produto> produto) {
-		this.produtos = produto;
+		this.produto = produto;
+	}
+
+	public List<Produto> getListaDeProdutos() {
+		return listaDeProdutos;
+	}
+
+	public void setListaDeProdutos(List<Produto> listaDeProdutos) {
+		this.listaDeProdutos = listaDeProdutos;
 	}
 
 }

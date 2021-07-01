@@ -24,7 +24,7 @@ import StoreGames.StoreGames.repository.ProdutoRepository;
 public class ProdutoController {
 
 	@Autowired
-	public ProdutoRepository repository;
+	private ProdutoRepository repository;
 
 	@GetMapping
 	public ResponseEntity<List<Produto>> GetAll() {

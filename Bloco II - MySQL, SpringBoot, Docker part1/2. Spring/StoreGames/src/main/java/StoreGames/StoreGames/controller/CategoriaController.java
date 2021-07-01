@@ -24,7 +24,7 @@ import StoreGames.StoreGames.repository.CategoriaRepository;
 public class CategoriaController {
 
 	@Autowired
-	public CategoriaRepository repository;
+	private CategoriaRepository repository;
 
 	@GetMapping
 	public ResponseEntity<List<Categoria>> GetAll() {
