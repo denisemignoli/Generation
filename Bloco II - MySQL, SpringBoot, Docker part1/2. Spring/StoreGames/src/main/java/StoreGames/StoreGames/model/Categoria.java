@@ -1,14 +1,23 @@
 package StoreGames.StoreGames.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table (name = "tb_categoria")
+@Table(name = "tb_categoria")
 public class Categoria {
 
 	@Id
@@ -16,13 +25,19 @@ public class Categoria {
 	private Long id;
 
 	@NotEmpty(message = "Nome não pode estar vazio")
-	private String nome;
+	@Size(min = 3, max = 15)
+	private String nomeCategoria;
 
 	@NotEmpty(message = "Descrição não pode estar vazia")
+	@Size(min = 3, max = 255)
 	private String descricao;
 
 	@NotEmpty(message = "Idade não pode estar vazia")
-	private Long classIdade;
+	private Long idade;
+
+	@OneToMany(mappedBy = "categoria")
+	@JsonIgnoreProperties("categoria")
+	private List<Produto> produtos;
 
 	public Long getId() {
 		return id;
@@ -32,12 +47,12 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeCategoria() {
+		return nomeCategoria;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeCategoria(String nomeCategoria) {
+		this.nomeCategoria = nomeCategoria;
 	}
 
 	public String getDescricao() {
@@ -48,12 +63,20 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
-	public Long getClassIdade() {
-		return classIdade;
+	public Long getIdade() {
+		return idade;
 	}
 
-	public void setClassIdade(Long classIdade) {
-		this.classIdade = classIdade;
+	public void setIdade(Long idade) {
+		this.idade = idade;
+	}
+
+	public List<Produto> getProduto() {
+		return produtos;
+	}
+
+	public void setProduto(List<Produto> produto) {
+		this.produtos = produto;
 	}
 
 }

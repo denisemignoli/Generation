@@ -3,12 +3,10 @@ package StoreGames.StoreGames.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-import StoreGames.StoreGames.model.Categoria;
+import StoreGames.StoreGames.model.Produto;
 
-@Repository
-public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
+public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 	/**
 	 * 
@@ -18,6 +16,6 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Long> {
 	 * @since v1.0
 	 * @author denise
 	 */
-	public List<Categoria> findAllByDescricaoContainingIgnoreCase(String descricao);
+	public List<Produto> findAllByNomeProdutoContainingIgnoreCase(String nomeProduto);
 
 }
