@@ -13,32 +13,29 @@ import javax.persistence.GenerationType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@Entity
-@Table(name = "postagem")
-@Component
+@Entity // basicamente equivale a criação de uma tabela
+@Table(name = "tb_postagem")
 public class Postagem {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) // criar automaticamente os IDs
+	@Id // Define que o atributo abaixo é uma ID, chave primária
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Define o auto_increment com a estratégia "GenerationType.IDENTITY"
 	private long id;
 
-	@NotNull (message = "campo não pode ser nulo")
-	@Size(min = 5, max = 100)
+	@NotNull(message = "O título não pode ser nulo") // Define que não pode ser nulo
+	@Size(min = 2, max = 100) // Define tamanho do título com mínimo e máximo
 	private String titulo;
 
-	@NotNull (message = "campo não pode ser nulo")
-	@Size(min = 10, max = 500)
+	@NotNull(message = "O texto não pode ser nulo")
+	@Size(min = 10, max = 600)
 	private String texto;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // Pega a data da postagem
 	private Date date = new java.sql.Date(System.currentTimeMillis());
 
 	@ManyToOne
-	@JsonIgnoreProperties("postagem")
+	@JsonIgnoreProperties("postagem") // ignorar a propriedade postagem do objeto tema
 	private Tema tema;
 
 	public long getId() {
