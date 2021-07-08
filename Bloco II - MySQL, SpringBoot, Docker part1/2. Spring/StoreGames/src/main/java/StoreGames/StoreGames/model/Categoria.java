@@ -35,7 +35,7 @@ public class Categoria {
 	@NotEmpty(message = "Idade não pode estar vazia")
 	private Long idade;
 
-	@OneToMany(mappedBy = "categoria")
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 

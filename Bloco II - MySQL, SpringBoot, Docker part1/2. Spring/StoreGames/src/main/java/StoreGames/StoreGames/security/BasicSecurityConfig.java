@@ -1,4 +1,4 @@
-package org.generation.blogPessoal.security;
+package StoreGames.StoreGames.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	private UserDetailsService userDetailsService;
 	
 	@Override // sobreescrita de método
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception { //throws Exception > tratativa de erro
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
 	}
 	

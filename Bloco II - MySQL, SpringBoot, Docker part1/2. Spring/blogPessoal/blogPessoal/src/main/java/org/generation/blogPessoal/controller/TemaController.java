@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.generation.blogPessoal.model.Tema;
 import org.generation.blogPessoal.repository.TemaRepository;
 
@@ -44,7 +46,7 @@ public class TemaController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Tema> criarTema(@RequestBody Tema tema){ // não é lista pq postamos uma coisa de cada vez | RequestBody > pede o corpo da requisição do tipo Tema chamado tema
+	public ResponseEntity<Tema> criarTema(@Valid @RequestBody Tema tema){ // não é lista pq postamos uma coisa de cada vez | RequestBody > pede o corpo da requisição do tipo Tema chamado tema
 		return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema)); //pego o corpo da requisção e chaam o método de salvar para salvar o tema que criamos em cima
 	}
 	

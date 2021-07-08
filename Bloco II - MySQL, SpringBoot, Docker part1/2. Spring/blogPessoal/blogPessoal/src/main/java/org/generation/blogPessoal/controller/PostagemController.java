@@ -5,6 +5,8 @@ import org.generation.blogPessoal.repository.PostagemRepository;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.generation.blogPessoal.model.Postagem;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,7 +51,7 @@ public class PostagemController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Postagem> criarPostagem(@RequestBody Postagem postagem)
+	public ResponseEntity<Postagem> criarPostagem(@Valid @RequestBody Postagem postagem)
 	{
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositoryPostagem.save(postagem));
 	}

@@ -1,10 +1,10 @@
-package org.generation.blogPessoal.security;
+package StoreGames.StoreGames.security;
 
 import java.util.Collection;
 
-import org.generation.blogPessoal.model.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import StoreGames.StoreGames.model.Usuario;
 
 public class UserDetailsImpl implements UserDetails {
 
